@@ -1,3 +1,7 @@
+
+
+
+
 var street = ''
 var city = '';
 var state = '';
@@ -103,7 +107,7 @@ $.ajax({
 
 
 
-    var songlist = americancat[3]
+    var songlist = americancat[i]
     songlistgetter(songlist)
      }
 
