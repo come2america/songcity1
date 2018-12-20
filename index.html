@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./Assets/CSS/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+
+
+    <title>Song City Map</title>
+    
+</head>
+
+<body>
+
+
+    <h1 class="main">Song City Map</h1>
+
+    <!-- <div class="container"> -->
+
+        <div class="row">
+            <form>
+                <div class="input-field col s3">
+                    <input placeholder="123 Main Street" id="street" type="text" class="validate">
+                    <label class="active" for="street">Address</label>
+                </div>
+                <div class="input-field col s3">
+                    <input placeholder="Irvine" id="city" type="text" class="validate">
+                    <label class="active" for="city">City</label>
+                </div>
+                <div class="input-field col s3">
+                    <input placeholder="CA" id="state" type="text" class="validate">
+                    <label class="active" for="state">State</label>
+                </div>
+                <div class="input-field col s3">
+                    <input placeholder="Controlla" id="zip" type="text" class="validate">
+                    <label class="active" for="zip">Song</label>
+                </div>
+            </form>
+        </div>
+        <div class="row center-align">
+            <button class="btn waves-effect waves-light" id="submit" type="button" name="action"><i class="material-icons right">audiotrack</i>Submit
+            </button>
+            <button class="btn waves-effect waves-light" id="loveit" type="button" name="action"><i class="material-icons right">audiotrack</i>I LOVE IT
+            </button>
+            <button class="btn waves-effect waves-light" id="hateit" type="button" name="action"><i class="material-icons right">audiotrack</i>HATE it Start over
+            </button>
+        </div>
+
+        
+            <div class="row">
+                <div class="col s12 ">
+                    <div class=" center-align" id="map">
+                        <!-- <div class="gmap_canvas"><iframe width="600" height="350" id="gmap_canvas" src="https://maps.google.com/maps?q=510%20e%20peltason%20irvine&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    </div> -->
+                    </div>
+                    <h2 id="displayDiv"></h2>
+                    <!-- <div id="map"></div> -->
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s5 music-row info">
+                    <h5>Title: <span id="title"></span></h5>
+                    <h5>Artist: <span id="artist"></span></h5>
+                    <h5 id="wiki"></h5>
+                </div>
+
+                <div class="col s7 music-row " id="linkhere">
+                    <a></a>
+                </div>
+            </div>
+
+            <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+ 
+            <script>
+            
+            
+              // Initialize Firebase
+              var config = {
+                apiKey: "AIzaSyDIn55RwHEEzeZ3UVwGxMG3V9LVWzcjZeE",
+                authDomain: "songcity-1544767995840.firebaseapp.com",
+                databaseURL: "https://songcity-1544767995840.firebaseio.com",
+                projectId: "songcity-1544767995840",
+                storageBucket: "songcity-1544767995840.appspot.com",
+                messagingSenderId: "821348327302"
+              };
+              firebase.initializeApp(config);
+            </script>
+                
+
+
+    <!-- </div> /container div -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="Assets/JavaScript/app.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+
+   
+
+
+
+</body>
+
+</html>

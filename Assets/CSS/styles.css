@@ -1,0 +1,79 @@
+ * {
+    font-family: 'Roboto', sans-serif;
+ }
+ 
+ body {
+     background-image: url("../Images/concrete-texture.png");
+    /* background-size: 100%; */
+}
+        
+.main {
+    font-family: 'Permanent Marker', cursive, 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 65px;
+    margin: 30px;
+}
+        
+.waves-effect {
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+}
+        
+.waves-effect:hover {
+    background-color: chocolate;
+    color:black;
+    font-family: 'Roboto', sans-serif;
+}
+
+.waves-effect:focus {
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+}
+
+::placeholder {
+    color: black;
+}
+
+.input-field input:focus + label {
+   color:chocolate !important;
+ }
+
+.row .input-field input:focus {
+   border-bottom: 1px solid chocolate!important;
+   box-shadow: 0 1px 0 0 chocolate !important
+ }
+        
+ .map {
+     margin: 20px;
+ }
+
+ .info {
+     
+ }
+
+ .iframe-container {
+     position: relative;
+     width: 100%;
+     padding-bottom: 56.25%;
+     height: 315px;
+ }
+
+.iframe-container iframe {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
