@@ -26,15 +26,15 @@
         <div class="row">
             <form>
                 <div class="input-field col s3">
-                    <input placeholder="123 Main Street" id="street" type="text" class="validate">
+                    <input placeholder="123 Main Street" id="street" type="text" class="validate" >
                     <label class="active" for="street">Address</label>
                 </div>
                 <div class="input-field col s3">
-                    <input placeholder="Irvine" id="city" type="text" class="validate">
+                    <input placeholder="Irvine" id="city" type="text" class="validate" >
                     <label class="active" for="city">City</label>
                 </div>
                 <div class="input-field col s3">
-                    <input placeholder="CA" id="state" type="text" class="validate">
+                    <input placeholder="CA" id="state" type="text" class="validate" >
                     <label class="active" for="state">State</label>
                 </div>
                 <div class="input-field col s3">
@@ -56,9 +56,9 @@
             <div class="row">
                 <div class="col s12 ">
                     <div class=" center-align" id="map">
-                        <!-- <div class="gmap_canvas"><iframe width="600" height="350" id="gmap_canvas" src="https://maps.google.com/maps?q=510%20e%20peltason%20irvine&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        <div class="gmap_canvas"><iframe width="600" height="350" id="gmap_canvas" src="http://www.mapquest.com"
                             frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                    </div> -->
+                    </div>
                     </div>
                     <h2 id="displayDiv"></h2>
                     <!-- <div id="map"></div> -->
@@ -82,16 +82,15 @@
             <script>
             
             
-              // Initialize Firebase
-              var config = {
-                apiKey: "AIzaSyDIn55RwHEEzeZ3UVwGxMG3V9LVWzcjZeE",
-                authDomain: "songcity-1544767995840.firebaseapp.com",
-                databaseURL: "https://songcity-1544767995840.firebaseio.com",
-                projectId: "songcity-1544767995840",
-                storageBucket: "songcity-1544767995840.appspot.com",
-                messagingSenderId: "821348327302"
-              };
-              firebase.initializeApp(config);
+            var config = {
+    apiKey: "AIzaSyDIn55RwHEEzeZ3UVwGxMG3V9LVWzcjZeE",
+    authDomain: "songcity-1544767995840.firebaseapp.com",
+    databaseURL: "https://songcity-1544767995840.firebaseio.com",
+    projectId: "songcity-1544767995840",
+    storageBucket: "songcity-1544767995840.appspot.com",
+    messagingSenderId: "821348327302"
+  };
+  firebase.initializeApp(config);
             </script>
                 
 
