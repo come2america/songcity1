@@ -140,7 +140,7 @@ $("#submit").on("click", function (event) {
 
                 }
             });
-        
+            mappingApi()
 
         }
         else {
@@ -192,9 +192,10 @@ function mappingApi() {
         var longitude = response.results[0].locations[0].latLng.lng;
         var latitude = response.results[0].locations[0].latLng.lat;
         $("#displayDiv").append(" Zip Code: " + postalCode)
-        getIndex();
+        
         L.mapquest.key = "jqnjIbmIDCL7UaGiP6SPvbfGTlGTs9z0";
         // 'map' refers to a <div> element with the ID map
+        // $('#map').empty();
         var map = L.mapquest.map('map', {
             center: [latitude, longitude],
             layers: L.mapquest.tileLayer('map'),
@@ -203,21 +204,8 @@ function mappingApi() {
         L.marker([latitude, longitude], {
             icon: L.mapquest.icons.marker(),
             draggable: false
-        }).addTo(map);
+        }).addTo("map");
 
-        function getIndex() {
-            var addressID = (Math.abs(longitude % latitude)) * 100000000;
-            console.log(addressID);
-            var test = addressID;
-            var addressIDArray = test.toString().split('');
-            var stripVal = [
-                addressIDArray[5], addressIDArray[6], addressIDArray[7]
-            ];
-            var convVal = stripVal.join('');
-            var indexVal = parseInt(convVal);
-            console.log(convVal);
-
-        };
     });
 }
 mappingApi();
