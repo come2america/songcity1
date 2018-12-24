@@ -7,7 +7,7 @@ var selectedArtist = '';
 var selectedTrackId = '';
 var assigntrack='';
 var image='';
-
+var ituneurl=''
 
 
 function songlistgetter(songlist) {
@@ -30,9 +30,9 @@ function songlistgetter(songlist) {
                     url: queryURL,
                     dataType: "jsonp",
                     success: function (response) {
-                        //console.log(response)
+                        // console.log(response)
                         var image = $("<img>").attr({ src: response.results[0].artworkUrl100 })
-
+ $("#buylink").attr({ href:" https://itunes.apple.com/us/album/id"+response.results[0].collectionId+"?i="+response.results[0].trackId})
                         selectedTrackname = response.results[0].trackName
                         selectedArtist = response.results[0].artistName
                         selectedTrackId = response.results[0].trackId
@@ -58,8 +58,8 @@ function songlistgetter(songlist) {
                                 url: queryURL,
                                 method: "GET"
                             }).then(function (response) {
-                                console.log(response);
-                                console.log(response.items[0].id.videoId);
+                                // console.log(response);
+                                // console.log(response.items[0].id.videoId);
                                 var videoID = response.items[0].id.videoId;
                                 $('#vid').attr('src', 'https://www.youtube.com/embed/'+videoID);
                             });
@@ -109,8 +109,8 @@ function youtubeVid(){
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            console.log(response);
-            console.log(response.items[0].id.videoId);
+            // console.log(response);
+            // console.log(response.items[0].id.videoId);
             var videoID = response.items[0].id.videoId;
             $('#vid').attr('src', 'https://www.youtube.com/embed/'+videoID);
         });
@@ -142,7 +142,7 @@ $("#submit").on("click", function (event) {
                 dataType: "jsonp",
                 success: function (response) {
 
-                    //console.log(response)
+                    console.log(response)
                     image = $("<img>").attr({ src: response.results[0].artworkUrl100 })
 
                     selectedTrackname = response.results[0].trackName
@@ -152,6 +152,7 @@ $("#submit").on("click", function (event) {
                     $('#artist').html(selectedArtist);
                     $('#wiki').html(selectedTrackId);
                     $("#linkhere").html(image);
+                    $("#buylink").attr({ href:" https://itunes.apple.com/us/album/id"+response.results[0].collectionId+"?i="+response.results[0].trackId})
                     mappingApi();
                     youtubeVid();
                 }
@@ -222,6 +223,7 @@ database.ref().on("child_added", function (snapshot) {
     $('#title').html(tdtitle);
     $('#artist').html(tdartist);
     $('#wiki').html(tdtrackid);
+    
 })
 
 
