@@ -33,6 +33,7 @@ function songlistgetter(songlist) {
                         // console.log(response)
                         var image = $("<img>").attr({ src: response.results[0].artworkUrl100 })
  $("#buylink").attr({ href:" https://itunes.apple.com/us/album/id"+response.results[0].collectionId+"?i="+response.results[0].trackId})
+ $("#amazonlink").attr({ href:"https://www.amazon.com/gp/search?ie=UTF8&tag=locationsong1-20&linkCode=ur2&linkId=a2760e14a2d286d92bc32fdeae1f4b8d&camp=1789&creative=9325&index=digital-music&keywords="+response.results[0].artistName+ " " + response.results[0].trackName})
                         selectedTrackname = response.results[0].trackName
                         selectedArtist = response.results[0].artistName
                         selectedTrackId = response.results[0].trackId
@@ -152,7 +153,9 @@ $("#submit").on("click", function (event) {
                     $('#artist').html(selectedArtist);
                     $('#wiki').html(selectedTrackId);
                     $("#linkhere").html(image);
+                
                     $("#buylink").attr({ href:" https://itunes.apple.com/us/album/id"+response.results[0].collectionId+"?i="+response.results[0].trackId})
+                    $("#amazonlink").attr({ href:"https://www.amazon.com/gp/search?ie=UTF8&tag=locationsong1-20&linkCode=ur2&linkId=a2760e14a2d286d92bc32fdeae1f4b8d&camp=1789&creative=9325&index=digital-music&keywords="+response.results[0].artistName+ " " + response.results[0].trackName})
                     mappingApi();
                     youtubeVid();
                 }
