@@ -188,9 +188,27 @@ function mappingApi() {
         var upperState = state.toUpperCase();
         var postalCode = response.results[0].locations[0].postalCode;
         $(".placeholder").append("<div>" + (upperStreet + ", " + upperCity + ", " + upperState  + " " + postalCode) + "</div>");
-    });
+   
     console.log("mappingApi", selectedArtist+selectedTrackname);
+
+        // var map = new mqgl.Map('map', 'jqnjIbmIDCL7UaGiP6SPvbfGTlGTs9z0', {
+        //   center: [response.results[0].locations[0].latLng.lat, response.results[0].locations[0].latLng.lng],
+        //   zoom: 12,
+        //   pitch: 60,
+        //   bearing: 20
+//         // });
+//         $.ajax({
+//             url:  " https://www.mapquestapi.com/search/v2/radius?origin=Denver,+CO&radius=0.15&maxMatches=3&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json&key="+apiKey
+//             method: "GET"
+//         }).then(function (response) {
+      
+//         c
+     
+   }); 
+
 }
+
+
 
 var database = firebase.database();
 $("#loveit").on("click", function (event) {
