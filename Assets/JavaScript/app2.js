@@ -17,7 +17,7 @@ function songlistgetter(songlist) {
         method: "GET"
     }).then(function (result) {
 
-        var song = result.parse.links[Math.floor((Math.random() * 100) + 1)]["*"];
+        var song = result.parse.links[Math.floor((Math.random() * 200) + 1)]["*"];
 
         var queryURL = "https://itunes.apple.com/search?term=" + song + "&limit=1";
         $.ajax({
@@ -86,7 +86,7 @@ function artistGetter() {
         //console.log(americancat);
 
         for (var i = 0; i < americancat.length; i++) {
-            var songlist = americancat[3]
+            var songlist = americancat[Math.floor((Math.random() * 4))]
             songlistgetter(songlist)
         }
     })
@@ -123,6 +123,8 @@ $("#submit").on("click", function (event) {
     street = $("#street").val().trim().toLowerCase();
     city = $("#city").val().trim().toLowerCase();
     state = $("#state").val().trim().toLowerCase();
+    
+    
     var ref = firebase.database().ref();
 
     ref.orderByChild("userstreet").equalTo(street).on("value", function (snapshot) {
@@ -173,6 +175,7 @@ $("#submit").on("click", function (event) {
     });
 });
 
+//  $("#wavesframe").attr('src', '"https://maps.google.com/maps?q='+street+city+state+'&z=10&output=embed')
 function mappingApi() {
     var apiKey = "jqnjIbmIDCL7UaGiP6SPvbfGTlGTs9z0";
     var queryURL = " https://www.mapquestapi.com/geocoding/v1/address?key=" + apiKey + "&adminArea3=" + state + "&adminArea1=US&adminArea5=" + city + "&street=" + street;
@@ -190,21 +193,9 @@ function mappingApi() {
         $(".placeholder").append("<div>" + (upperStreet + ", " + upperCity + ", " + upperState  + " " + postalCode) + "</div>");
    
     console.log("mappingApi", selectedArtist+selectedTrackname);
-
-        // var map = new mqgl.Map('map', 'jqnjIbmIDCL7UaGiP6SPvbfGTlGTs9z0', {
-        //   center: [response.results[0].locations[0].latLng.lat, response.results[0].locations[0].latLng.lng],
-        //   zoom: 12,
-        //   pitch: 60,
-        //   bearing: 20
-//         // });
-//         $.ajax({
-//             url:  " https://www.mapquestapi.com/search/v2/radius?origin=Denver,+CO&radius=0.15&maxMatches=3&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json&key="+apiKey
-//             method: "GET"
-//         }).then(function (response) {
-      
-//         c
      
    }); 
+
 
 }
 
