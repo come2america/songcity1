@@ -124,7 +124,7 @@ $("#submit").on("click", function (event) {
     city = $("#city").val().trim().toLowerCase();
     state = $("#state").val().trim().toLowerCase();
     
-    
+   
     var ref = firebase.database().ref();
 
     ref.orderByChild("userstreet").equalTo(street).on("value", function (snapshot) {
@@ -173,9 +173,14 @@ $("#submit").on("click", function (event) {
      
         }
     });
+    $("#wavesframe").attr('src', 'https://maps.google.com/maps?q='+street+city+state+'&z=10&output=embed')
+    
+
+
+
 });
 
-//  $("#wavesframe").attr('src', '"https://maps.google.com/maps?q='+street+city+state+'&z=10&output=embed')
+ 
 function mappingApi() {
     var apiKey = "jqnjIbmIDCL7UaGiP6SPvbfGTlGTs9z0";
     var queryURL = " https://www.mapquestapi.com/geocoding/v1/address?key=" + apiKey + "&adminArea3=" + state + "&adminArea1=US&adminArea5=" + city + "&street=" + street;
