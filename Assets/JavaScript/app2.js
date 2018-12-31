@@ -17,7 +17,7 @@ function songlistgetter(songlist) {
         method: "GET"
     }).then(function (result) {
 
-        var song = result.parse.links[Math.floor((Math.random() * 200) + 1)]["*"];
+        var song = result.parse.links[Math.floor((Math.random() * 80) + 1)]["*"];
 
         var queryURL = "https://itunes.apple.com/search?term=" + song + "&limit=1";
         $.ajax({
