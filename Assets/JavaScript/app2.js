@@ -201,68 +201,68 @@ function mappingApi() {
     console.log("mappingApi", selectedArtist+selectedTrackname);
     
     // $("#wavesframe").attr('src', "https://embed.waze.com/iframe?zoom=13&lat="+response.results[0].locations[0].latLng.lat+"&lon="+response.results[0].locations[0].latLng.lng+"&pin=1") 
-//     var mapProp= {
-//         center:new google.maps.LatLng( response.results[0].locations[0].latLng.lat, response.results[0].locations[0].latLng.lng),
-//         zoom:15
-//       };
-//       var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-//       var marker = new google.maps.Marker({
-//         position: new google.maps.LatLng( response.results[0].locations[0].latLng.lat, response.results[0].locations[0].latLng.lng),
-//         map: map,
+    var mapProp= {
+        center:new google.maps.LatLng( response.results[0].locations[0].latLng.lat, response.results[0].locations[0].latLng.lng),
+        zoom:15
+      };
+      var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng( response.results[0].locations[0].latLng.lat, response.results[0].locations[0].latLng.lng),
+        map: map,
    
-//      });
-//  marker.setMap(map);
+     });
+ marker.setMap(map);
 
-var geocoder;
-var map;
-var address = street+city+state 
+// var geocoder;
+// var map;
+// var address = street+city+state 
 
-function initialize() {
-  geocoder = new google.maps.Geocoder();
-  var latlng = new google.maps.LatLng(response.results[0].locations[0].latLng.lat,  response.results[0].locations[0].latLng.lng);
-  var myOptions = {
-    zoom: 8,
-    center: latlng,
-    mapTypeControl: true,
-    mapTypeControlOptions: {
-      style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-    },
-    navigationControl: true,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  map = new google.maps.Map(document.getElementById("googleMap"), myOptions);
-  if (geocoder) {
-    geocoder.geocode({
-      'address': address
-    }, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
-          map.setCenter(results[0].geometry.location);
+// function initialize() {
+//   geocoder = new google.maps.Geocoder();
+//   var latlng = new google.maps.LatLng(response.results[0].locations[0].latLng.lat,  response.results[0].locations[0].latLng.lng);
+//   var myOptions = {
+//     zoom: 8,
+//     center: latlng,
+//     mapTypeControl: true,
+//     mapTypeControlOptions: {
+//       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+//     },
+//     navigationControl: true,
+//     mapTypeId: google.maps.MapTypeId.ROADMAP
+//   };
+//   map = new google.maps.Map(document.getElementById("googleMap"), myOptions);
+//   if (geocoder) {
+//     geocoder.geocode({
+//       'address': address
+//     }, function(results, status) {
+//       if (status == google.maps.GeocoderStatus.OK) {
+//         if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+//           map.setCenter(results[0].geometry.location);
 
-          var infowindow = new google.maps.InfoWindow({
-            content: '<b>' + address + '</b>',
-            size: new google.maps.Size(150, 50)
-          });
+//           var infowindow = new google.maps.InfoWindow({
+//             content: '<b>' + address + '</b>',
+//             size: new google.maps.Size(150, 50)
+//           });
 
-          var marker = new google.maps.Marker({
-            position: results[0].geometry.location,
-            map: map,
-            title: address
-          });
-          google.maps.event.addListener(marker, 'click', function() {
-            infowindow.open(map, marker);
-          });
+//           var marker = new google.maps.Marker({
+//             position: results[0].geometry.location,
+//             map: map,
+//             title: address
+//           });
+//           google.maps.event.addListener(marker, 'click', function() {
+//             infowindow.open(map, marker);
+//           });
 
-        } else {
-          alert("No results found");
-        }
-      } else {
-        alert("Geocode was not successful for the following reason: " + status);
-      }
-    });
-  }
-}
-google.maps.event.addDomListener(window, 'load', initialize);
+//         } else {
+//           alert("No results found");
+//         }
+//       } else {
+//         alert("Geocode was not successful for the following reason: " + status);
+//       }
+//     });
+//   }
+// }
+// google.maps.event.addDomListener(window, 'load', initialize);
 
 
 }); 
