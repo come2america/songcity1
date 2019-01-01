@@ -215,7 +215,7 @@ function mappingApi() {
 
 var geocoder;
 var map;
-var address = street+city+state
+var address = street+city+state 
 
 function initialize() {
   geocoder = new google.maps.Geocoder();
@@ -263,9 +263,11 @@ function initialize() {
   }
 }
 google.maps.event.addDomListener(window, 'load', initialize);
+
+
 }); 
 
-myMap()
+
 }
 
 
