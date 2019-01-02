@@ -5,9 +5,9 @@ var zip = '';
 var selectedTrackname = '';
 var selectedArtist = '';
 var selectedTrackId = '';
-var assigntrack='';
-var image='';
-var ituneurl=''
+var assigntrack = '';
+var image = '';
+var ituneurl = ''
 
 
 function songlistgetter(songlist) {
@@ -32,8 +32,8 @@ function songlistgetter(songlist) {
                     success: function (response) {
                         // console.log(response)
                         var image = $("<img>").attr({ src: response.results[0].artworkUrl100 })
- $("#buylink").attr({ href:" https://geo.itunes.apple.com/us/album/id"+response.results[0].collectionId+"?i="+response.results[0].trackId+"&at=1000lR4Q"})
- $("#amazonlink").attr({ href:"https://www.amazon.com/gp/search?ie=UTF8&tag=locationsong1-20&linkCode=ur2&linkId=a2760e14a2d286d92bc32fdeae1f4b8d&camp=1789&creative=9325&index=digital-music&keywords="+response.results[0].artistName+ " " + response.results[0].trackName})
+                        $("#buylink").attr({ href: " https://geo.itunes.apple.com/us/album/id" + response.results[0].collectionId + "?i=" + response.results[0].trackId + "&at=1000lR4Q" })
+                        $("#amazonlink").attr({ href: "https://www.amazon.com/gp/search?ie=UTF8&tag=locationsong1-20&linkCode=ur2&linkId=a2760e14a2d286d92bc32fdeae1f4b8d&camp=1789&creative=9325&index=digital-music&keywords=" + response.results[0].artistName + " " + response.results[0].trackName })
                         selectedTrackname = response.results[0].trackName
                         selectedArtist = response.results[0].artistName
                         selectedTrackId = response.results[0].trackId
@@ -42,28 +42,28 @@ function songlistgetter(songlist) {
                         $('#wiki').html(selectedTrackId);
                         $("#linkhere").html(image);
 
-                        gapi.load('auth2', function() {
+                        gapi.load('auth2', function () {
                         });
-                  
-                        var searchKey = selectedArtist+selectedTrackname;
+
+                        var searchKey = selectedArtist + selectedTrackname;
                         var apiKey = "AIzaSyB6eT2et-bDuQ2u7rfBBsWkmxjTP--QqXw";
-                    
-                        var queryURL = "https://www.googleapis.com/youtube/v3/search?key="+ apiKey+ 
-                        "&part=snippet&q="+searchKey+"&type=video"
-                    
+
+                        var queryURL = "https://www.googleapis.com/youtube/v3/search?key=" + apiKey +
+                            "&part=snippet&q=" + searchKey + "&type=video"
+
                         console.log(queryURL);
                         var x = document.getElementById("#title");
                         console.log(x);
-                    
+
                         $.ajax({
-                                url: queryURL,
-                                method: "GET"
-                            }).then(function (response) {
-                                // console.log(response);
-                                // console.log(response.items[0].id.videoId);
-                                var videoID = response.items[0].id.videoId;
-                                $('#vid').attr('src', 'https://www.youtube.com/embed/'+videoID);
-                            });
+                            url: queryURL,
+                            method: "GET"
+                        }).then(function (response) {
+                            // console.log(response);
+                            // console.log(response.items[0].id.videoId);
+                            var videoID = response.items[0].id.videoId;
+                            $('#vid').attr('src', 'https://www.youtube.com/embed/' + videoID);
+                        });
 
                     }
                 });
@@ -92,29 +92,29 @@ function artistGetter() {
     })
 };
 
-function youtubeVid(){
-    gapi.load('auth2', function() {
+function youtubeVid() {
+    gapi.load('auth2', function () {
     });
 
-    var searchKey = selectedArtist+selectedTrackname;
+    var searchKey = selectedArtist + selectedTrackname;
     var apiKey = "AIzaSyB6eT2et-bDuQ2u7rfBBsWkmxjTP--QqXw";
 
-    var queryURL = "https://www.googleapis.com/youtube/v3/search?key="+ apiKey+ 
-    "&part=snippet&q="+searchKey+"&type=video"
+    var queryURL = "https://www.googleapis.com/youtube/v3/search?key=" + apiKey +
+        "&part=snippet&q=" + searchKey + "&type=video"
 
     console.log(queryURL);
     var x = document.getElementById("#title");
     console.log(x);
 
     $.ajax({
-            url: queryURL,
-            method: "GET"
-        }).then(function (response) {
-            // console.log(response);
-            // console.log(response.items[0].id.videoId);
-            var videoID = response.items[0].id.videoId;
-            $('#vid').attr('src', 'https://www.youtube.com/embed/'+videoID);
-        });
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        // console.log(response);
+        // console.log(response.items[0].id.videoId);
+        var videoID = response.items[0].id.videoId;
+        $('#vid').attr('src', 'https://www.youtube.com/embed/' + videoID);
+    });
 
 }
 
@@ -123,8 +123,8 @@ $("#submit").on("click", function (event) {
     street = $("#street").val().trim().toLowerCase();
     city = $("#city").val().trim().toLowerCase();
     state = $("#state").val().trim().toLowerCase();
-    
-   
+
+
     var ref = firebase.database().ref();
 
     ref.orderByChild("userstreet").equalTo(street).on("value", function (snapshot) {
@@ -138,8 +138,8 @@ $("#submit").on("click", function (event) {
             console.log("if statement executed");
 
             var queryURL = "https://itunes.apple.com/lookup?id=" + assigntrack + " &limit=200";
-           
-            
+
+
             $.ajax({
                 url: queryURL,
                 dataType: "jsonp",
@@ -155,36 +155,36 @@ $("#submit").on("click", function (event) {
                     $('#artist').html(selectedArtist);
                     $('#wiki').html(selectedTrackId);
                     $("#linkhere").html(image);
-                
-                    $("#buylink").attr({ href:" https://geo.itunes.apple.com/us/album/id"+response.results[0].collectionId+"?i="+response.results[0].trackId+"&at=1000lR4Q" })
-                    $("#amazonlink").attr({ href:"https://www.amazon.com/gp/search?ie=UTF8&tag=locationsong1-20&linkCode=ur2&linkId=a2760e14a2d286d92bc32fdeae1f4b8d&camp=1789&creative=9325&index=digital-music&keywords="+response.results[0].artistName+ " " + response.results[0].trackName})
+
+                    $("#buylink").attr({ href: " https://geo.itunes.apple.com/us/album/id" + response.results[0].collectionId + "?i=" + response.results[0].trackId + "&at=1000lR4Q" })
+                    $("#amazonlink").attr({ href: "https://www.amazon.com/gp/search?ie=UTF8&tag=locationsong1-20&linkCode=ur2&linkId=a2760e14a2d286d92bc32fdeae1f4b8d&camp=1789&creative=9325&index=digital-music&keywords=" + response.results[0].artistName + " " + response.results[0].trackName })
                     mappingApi();
                     youtubeVid();
                 }
-            });     
- }
+            });
+        }
         else {
             console.log("else executed");
             artistGetter();
             mappingApi();
-     
+
         }
 
-        
+
     });
     // $("#wavesframe").attr('src', 'https://maps.google.com/maps?q='+street+city+state+'&z=10&output=embed')
-    
-  
+
+
 
 
 
 });
-  $("#wavesframe").attr('src', 'https://maps.google.com/maps?q='+street+city+state+'&z=10&output=embed')
+$("#wavesframe").attr('src', 'https://maps.google.com/maps?q=' + street + city + state + '&z=10&output=embed')
 
 function mappingApi() {
     var apiKey = "jqnjIbmIDCL7UaGiP6SPvbfGTlGTs9z0";
-    var queryURL = " https://www.mapquestapi.com/geocoding/v1/address?key=" +  apiKey + "&adminArea3=" + state + "&adminArea1=US&adminArea5=" + city + "&street=" + street;
-    
+    var queryURL = " https://www.mapquestapi.com/geocoding/v1/address?key=" + apiKey + "&adminArea3=" + state + "&adminArea1=US&adminArea5=" + city + "&street=" + street;
+
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -195,122 +195,124 @@ function mappingApi() {
         var upperCity = city.toUpperCase();
         var upperState = state.toUpperCase();
         var postalCode = response.results[0].locations[0].postalCode;
-        $(".placeholder").append("<div>" + (upperStreet + ", " + upperCity + ", " + upperState  + " " + postalCode) + "</div>");
-   
-    console.log("mappingApi", selectedArtist+selectedTrackname);
-    
-    // $("#wavesframe").attr('src', "https://embed.waze.com/iframe?zoom=13&lat="+response.results[0].locations[0].latLng.lat+"&lon="+response.results[0].locations[0].latLng.lng+"&pin=1") 
-    var mapProp= {
-        center:new google.maps.LatLng( response.results[0].locations[0].latLng.lat, response.results[0].locations[0].latLng.lng),
-        zoom:15
-      };
-      var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-      var marker = new google.maps.Marker({
-        position: new google.maps.LatLng( response.results[0].locations[0].latLng.lat, response.results[0].locations[0].latLng.lng),
-        map: map,
-   
-     });
- marker.setMap(map);
-// var geocoder;
-// var map;
-// var address = street+city+state 
+        $(".placeholder").append("<div>" + (upperStreet + ", " + upperCity + ", " + upperState + " " + postalCode) + "</div>");
 
-// function initialize() {
-//   geocoder = new google.maps.Geocoder();
-//   var latlng = new google.maps.LatLng(response.results[0].locations[0].latLng.lat,  response.results[0].locations[0].latLng.lng);
-//   var myOptions = {
-//     zoom: 8,
-//     center: latlng,
-//     mapTypeControl: true,
-//     mapTypeControlOptions: {
-//       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-//     },
-//     navigationControl: true,
-//     mapTypeId: google.maps.MapTypeId.ROADMAP
-//   };
-//   map = new google.maps.Map(document.getElementById("googleMap"), myOptions);
-//   if (geocoder) {
-//     geocoder.geocode({
-//       'address': address
-//     }, function(results, status) {
-//       if (status == google.maps.GeocoderStatus.OK) {
-//         if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
-//           map.setCenter(results[0].geometry.location);
+        console.log("mappingApi", selectedArtist + selectedTrackname);
 
-//           var infowindow = new google.maps.InfoWindow({
-//             content: '<b>' + address + '</b>',
-//             size: new google.maps.Size(150, 50)
-//           });
+        // $("#wavesframe").attr('src', "https://embed.waze.com/iframe?zoom=13&lat="+response.results[0].locations[0].latLng.lat+"&lon="+response.results[0].locations[0].latLng.lng+"&pin=1") 
+        var mapProp = {
+            center: new google.maps.LatLng(response.results[0].locations[0].latLng.lat, response.results[0].locations[0].latLng.lng),
+            zoom: 15
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(response.results[0].locations[0].latLng.lat, response.results[0].locations[0].latLng.lng),
+            map: map,
 
-//           var marker = new google.maps.Marker({
-//             position: results[0].geometry.location,
-//             map: map,
-//             title: address
-//           });
-//           google.maps.event.addListener(marker, 'click', function() {
-//             infowindow.open(map, marker);
-//           });
+        });
+        marker.setMap(map);
+        // var geocoder;
+        // var map;
+        // var address = street+city+state 
 
-//         } else {
-//           alert("No results found");
-//         }
-//       } else {
-//         alert("Geocode was not successful for the following reason: " + status);
-//       }
-//     });
-//   }
-// }
-// google.maps.event.addDomListener(window, 'load', initialize);
+        // function initialize() {
+        //   geocoder = new google.maps.Geocoder();
+        //   var latlng = new google.maps.LatLng(response.results[0].locations[0].latLng.lat,  response.results[0].locations[0].latLng.lng);
+        //   var myOptions = {
+        //     zoom: 8,
+        //     center: latlng,
+        //     mapTypeControl: true,
+        //     mapTypeControlOptions: {
+        //       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+        //     },
+        //     navigationControl: true,
+        //     mapTypeId: google.maps.MapTypeId.ROADMAP
+        //   };
+        //   map = new google.maps.Map(document.getElementById("googleMap"), myOptions);
+        //   if (geocoder) {
+        //     geocoder.geocode({
+        //       'address': address
+        //     }, function(results, status) {
+        //       if (status == google.maps.GeocoderStatus.OK) {
+        //         if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+        //           map.setCenter(results[0].geometry.location);
+
+        //           var infowindow = new google.maps.InfoWindow({
+        //             content: '<b>' + address + '</b>',
+        //             size: new google.maps.Size(150, 50)
+        //           });
+
+        //           var marker = new google.maps.Marker({
+        //             position: results[0].geometry.location,
+        //             map: map,
+        //             title: address
+        //           });
+        //           google.maps.event.addListener(marker, 'click', function() {
+        //             infowindow.open(map, marker);
+        //           });
+
+        //         } else {
+        //           alert("No results found");
+        //         }
+        //       } else {
+        //         alert("Geocode was not successful for the following reason: " + status);
+        //       }
+        //     });
+        //   }
+        // }
+        // google.maps.event.addDomListener(window, 'load', initialize);
 
 
-}); 
+    });
 
 
 }
-$("#current").on("click", function (event) {
-      // Note: This example requires that you consent to location sharing when
-      // prompted by your browser. If you see the error "The Geolocation service
-      // failed.", it means you probably did not give permission for the browser to
-      // locate you.
-      var map, infoWindow;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 6
-        });
-        infoWindow = new google.maps.InfoWindow;
 
-        // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
 
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            infoWindow.open(map);
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
+$("#current").on("click", function () {
+
+currentor()
+artistGetter()
+songlistgetter()
+youtubeVid()
+
+
+})
+    function currentor() {
+        // Note: This example requires that you consent to location sharing when
+        // prompted by your browser. If you see the error "The Geolocation service
+        // failed.", it means you probably did not give permission for the browser to
+        var x = document.getElementById("displayDiv");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
         }
-      }
 
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-        infoWindow.open(map);
-      }
-   
-   initMap()
-    })
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+            var mapProp = {
+                center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                zoom: 15
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                map: map,
+
+            });
+            marker.setMap(map);
+
+
+        }
+        getLocation()
+    }
+
+
 var database = firebase.database();
 $("#loveit").on("click", function (event) {
     event.preventDefault();
@@ -318,7 +320,7 @@ $("#loveit").on("click", function (event) {
     street = $("#street").val().trim().toLowerCase();
     city = $("#city").val().trim().toLowerCase();
     state = $("#state").val().trim().toLowerCase();
-    
+
     database.ref().push({
         userstreet: street,
         usercity: city,
@@ -345,7 +347,7 @@ database.ref().on("child_added", function (snapshot) {
     $('#title').html(tdtitle);
     $('#artist').html(tdartist);
     $('#wiki').html(tdtrackid);
-    
+
 })
 
 
