@@ -308,6 +308,8 @@ $("#current").on("click", function (event) {
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
+   
+   initMap()
     })
 var database = firebase.database();
 $("#loveit").on("click", function (event) {
