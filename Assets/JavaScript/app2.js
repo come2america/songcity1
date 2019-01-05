@@ -9,6 +9,17 @@ var assigntrack = '';
 var image = '';
 var ituneurl = ''
 
+var tags= [" A Song For Where You Are The Most" ,"A Song For The Road", "A Song For Your Destination", "A Song For Any Location"];
+setInterval(function(){ 
+
+
+$("#tagline").html("<h3>" + tags[Math.floor((Math.random() * 4))]+ "</h3>");
+console.log(tags[y])
+
+},6000)
+
+
+
 
 function songlistgetter(songlist) {
 
@@ -174,7 +185,23 @@ $("#submit").on("click", function (event) {
     });
     // $("#wavesframe").attr('src', 'https://maps.google.com/maps?q='+street+city+state+'&z=10&output=embed')
 
-
+    database.ref().on("child_added", function (snapshot) {
+        var data = snapshot.val();
+        var tdstreet = "<p>" + data.userstreet + "</p>";
+        var tdcity = "<p>" + data.usercity + "</p>";
+        var tdstate = "<p>" + data.userstate + "</p>";
+        var tdtitle = "<p>" + data.usertitle + "</p>";
+        var tdartist = "<p>" + data.userartist + "</p>";
+        var tdtrackid = "<p>" + data.usertrackid + "</p>";
+    
+        //$("#displayDiv").html(tdstreet, tdcity, tdstate)
+    
+        $('#title').html(tdtitle);
+        $('#artist').html(tdartist);
+        $('#wiki').html(tdtrackid);
+    
+    })
+    
 
 
 
@@ -333,22 +360,6 @@ $("#loveit").on("click", function (event) {
 
 });
 
-database.ref().on("child_added", function (snapshot) {
-    var data = snapshot.val();
-    var tdstreet = "<p>" + data.userstreet + "</p>";
-    var tdcity = "<p>" + data.usercity + "</p>";
-    var tdstate = "<p>" + data.userstate + "</p>";
-    var tdtitle = "<p>" + data.usertitle + "</p>";
-    var tdartist = "<p>" + data.userartist + "</p>";
-    var tdtrackid = "<p>" + data.usertrackid + "</p>";
-
-    //$("#displayDiv").html(tdstreet, tdcity, tdstate)
-
-    $('#title').html(tdtitle);
-    $('#artist').html(tdartist);
-    $('#wiki').html(tdtrackid);
-
-})
 
 
 $("#hateit").on("click", function () {

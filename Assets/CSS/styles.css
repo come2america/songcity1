@@ -67,6 +67,14 @@
  }
 
 /* Body Styles start here */
+#tagline {
+    margin-top: 60px;
+    margin-bottom: 50px;
+    background:  rgba(0, 0, 0, 0.555); 
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
 #displayDiv {
     margin-top: 70px;
