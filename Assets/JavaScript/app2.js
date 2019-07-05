@@ -130,6 +130,7 @@ function youtubeVid() {
 }
 
 $("#submit").on("click", function (event) {
+
     event.preventDefault();
     street = $("#street").val().trim().toLowerCase();
     city = $("#city").val().trim().toLowerCase();
@@ -201,9 +202,31 @@ $("#submit").on("click", function (event) {
         $('#wiki').html(tdtrackid);
     
     })
-    
+    // Get the modal
+var modal = document.getElementById("myModal");
 
+// Get the button that opens the modal
+var btn = document.getElementById("submit");
 
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
 });
 $("#wavesframe").attr('src', 'https://maps.google.com/maps?q=' + street + city + state + '&z=10&output=embed')
@@ -236,8 +259,11 @@ function mappingApi() {
             position: new google.maps.LatLng(response.results[0].locations[0].latLng.lat, response.results[0].locations[0].latLng.lng),
             map: map,
 
+       
+       
         });
         marker.setMap(map);
+        
         // var geocoder;
         // var map;
         // var address = street+city+state 
@@ -297,7 +323,31 @@ function mappingApi() {
 
 
 $("#current").on("click", function () {
+   // Get the modal
+   var modal = document.getElementById("myModal");
 
+   // Get the button that opens the modal
+   var btn = document.getElementById("current");
+   
+   // Get the <span> element that closes the modal
+   var span = document.getElementsByClassName("close")[0];
+   
+   // When the user clicks on the button, open the modal 
+   btn.onclick = function() {
+     modal.style.display = "block";
+   }
+   
+   // When the user clicks on <span> (x), close the modal
+   span.onclick = function() {
+     modal.style.display = "none";
+   }
+   
+   // When the user clicks anywhere outside of the modal, close it
+   window.onclick = function(event) {
+     if (event.target == modal) {
+       modal.style.display = "none";
+     }
+   }
 currentor()
 artistGetter()
 songlistgetter()
