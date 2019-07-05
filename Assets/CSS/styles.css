@@ -76,7 +76,7 @@
     padding-bottom: 20px;
 }
 
-#displayDiv, #addressform {
+#displayDiv {
     margin-top: 70px;
     margin-bottom: 70px;
     background:  rgba(0, 0, 0, 0.555); 
@@ -167,7 +167,7 @@
 /* Footer Styles */
 
 
-footer {
+footer, #addressform {
     background-color: rgba(0, 0, 0, 0.555);
     text-align: center;
     margin-top: 70px;
