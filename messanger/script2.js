@@ -20,7 +20,7 @@ const messagesRef = firebase.firestore().collection("messages");
 /* Define DOM elements */
 const messageInputDOM = document.getElementById("messageInput");
 const soundInputDOM = document.getElementById("soundInput");
-const soundPickerDOM = document.getElementById("submit");
+const soundPickerDOM = document.getElementById("submitbtn");
 const namePickerDOM= document.getElementById("namePicker");
 const messagesDOM = document.getElementById("messages");
 
