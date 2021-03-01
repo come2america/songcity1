@@ -119,24 +119,8 @@ messageInputDOM.addEventListener("keydown", (event) => {
       soundInputDOM.value = "";
   }
 });
-var database = firebase.database();
 
-messageInputDOM.addEventListener("keydown", (event) =>  {
-    event.preventDefault();
 
-    street = $("#street").val().trim().toLowerCase();
-    city = $("#city").val().trim().toLowerCase();
-    state = $("#state").val().trim().toLowerCase();
-
-    database.ref().push({
-        userstreet: street,
-        usercity: city,
-        userstate: state,
-       message:messageInputDOM,
-      sound: soundInputDOM,
-        name:namePickerDOM,
-
-    })
 
 });
 
