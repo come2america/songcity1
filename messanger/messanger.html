@@ -21,8 +21,17 @@
           <div id="messages"></div>
           <div class="controls">
               <input id="messageInput" type="text" placeholder="Type a message..." />
-              <form action="http://" target=_blank method="get">
+              <form action="http://" target=_blank method="post">
                   <input id="soundInput" type="url" placeholder="Copy Gingolow Song Url ..." />
+                  <button onClick="openUrl()">Open URL</button>
+                  <script>
+                      var url = "http://example.com/pocservlet?ReportNumber=USERINPUT&IPAddress=1.1.1.1";
+                      function openUrl() {
+                          var urlToOpen = url.replace("USERINPUT", document.getElementById("soundInput").value);
+                          alert(urlToOpen);
+                          window.open(urlToOpen);//use window.open(url, "_blank"); to open in new tab
+                      }
+                  </script>
                   <a href="https://gingolow.com/"
                      class="btn waves-effect waves-light" id="music2" type="button" name="action">
                       <i class="material-icons right">audiotrack</i>Play With Sounds
