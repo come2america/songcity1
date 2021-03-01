@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -37,10 +37,10 @@
     
 
     <div class="container">
-<div class="center-align" id="tagline">
-           <h1></h1>
+        <div class="center-align" id="tagline">
+            <h1></h1>
 
-        </div> 
+        </div>
 
         <!-- Address inputs and button -->
         <div id="addressform" class="row">
@@ -63,178 +63,197 @@
             </div>
         </div>
         <div class="button center-align">
-            <button class="btn waves-effect waves-light" id="submit" type="button" name="action"><i class="material-icons right">audiotrack</i>Submit
+            <button class="btn waves-effect waves-light" id="submit" type="button" name="action">
+                <i class="material-icons right">audiotrack</i>Submit
             </button>
-            
+
         </div>
         <div id="myModal" class="modal">
 
             <!-- Modal content -->
             <div class="modal-content">
-              <span class="close">&times;</span>
-              <p>Look Below As We Select A Song For this Location.. Press Love It To Save It For Next Time, Change It to select A New One</p>
-            </div>
-          
-          </div>
-        <div class="button center-align">
-                <button class="btn waves-effect waves-light" id="current" type="button" name="action"><i class="material-icons right">audiotrack</i>Current Location
-                </button>
+                <span class="close">&times;</span>
+                <p>Look Below As We Select A Song For this Location.. Press Love It To Save It For Next Time, Change It to select A New One</p>
             </div>
 
-        <div id="googleMap"  class="col s12 iframe-container" style="width:100%;height:400px;"> <iframe id="wavesframe" width="300" height="400"></iframe></div>
+        </div>
+        <div class="button center-align">
+            <button class="btn waves-effect waves-light" id="current" type="button" name="action">
+                <i class="material-icons right">audiotrack</i>Current Location
+            </button>
+        </div>
+
+        <div id="googleMap" class="col s12 iframe-container" style="width:100%;height:400px;"> <iframe id="wavesframe" width="300" height="400"></iframe></div>
 
         <!-- Song info + picture -->
         <!-- <div class="row">
-            <div class="col s12"> -->
-                
+        <div class="col s12"> -->
         <!-- <div class="col s12 iframe-container"  >
-                  
 
-                   
-                    </div>
-                 -->
 
-     <div class="center-align" id="displayDiv">
-            <p class="placeholder">510 EAST PELTASON DRIVE IRVINE, CA 92697</p>
+
+                </div>
+             -->
+
+        <div class="center-align" id="displayDiv">
+            <p class="placeholder">Your Address</p>
             <!-- <button onclick="window.location.href='./directions.html'">Continue</button> -->
 
 
-        </div> 
-        <!-- </div>
-        </div>  -->
-        <h5 style="color:black"> Your Location Song </h5>  
+        </div>
+
         <div class="button center-align">
-            <button class="btn waves-effect waves-light" id="loveit" type="button" name="action"><i class="material-icons right">audiotrack</i>I
-                Love It
-            </button>
+            <a href="https://orderfood.google.com/"
+               class="btn waves-effect waves-light" id="orderfood" type="button" name="action">
+                <i class="material-icons right">audiotrack</i>Order Food
 
-            <button class="btn waves-effect waves-light" id="hateit" type="button" name="action"><i class="material-icons right">audiotrack</i>I
-                Change it
-            </button>
-
+            </a>
         </div>
 
-        <div class="row info valign-wrapper">
+        <div class="button center-align">
+            <a href="https://gingolow.com/"
+               class="btn waves-effect waves-light" id="music" type="button" name="action">
+                <i class="material-icons right">audiotrack</i>Play With Sounds
 
-            <div class="col s6  image" id="linkhere">
-<img src ="./Assets/Images/jakes.jpg">
-            </div>
-
-            <div class="col s6">
-                <h5 class="song-info">Title: <span id="title">Kill The Lights</span></h5>
-                <h5>Artist: <span id="artist">The Jakes</span></h5>
-
-                <!-- <a href="mylocationsong.com?at=1000lc66" target="_blank"><img src="http://www.niftybuttons.com/itunes/itunesbutton1.png" alt="iTunes Button (via NiftyButtons.com)"></a> -->
-
-                <a id="buylink" style="display:inline-block;overflow:hidden;background:url(https://tools.applemusic.com/en-us/badge-lrg.svg?releaseDate=2001-04-02&kind=song&bubble=itunes) no-repeat;width:153px;height:40px;"></a>
-                <a id="amazonlink"><img src="./Assets/Images/amazon.png" alt="Amazon Button"
-                        style=" width:153px;height:40px;"></a>
-
-
-            </div>
+            </a>
         </div>
-
-
-
-        <!-- Youtube  -->
-        <div class="row">
-
-            <div class="col s12">
-                <div class="youtube iframe-container">
-                    <iframe id="vid" width="550" height="315" src="https://www.youtube.com/embed/Mj4JwAFGQq4 "
-                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-            </div>
-
-        </div>
-
-
     
+     <div class="button center-align">
+                <a href="C:\Users\come2\Source\Repos\come2america\songcity1\messanger\index2.html"
+                   class="btn waves-effect waves-light" id="message" type="button" name="action">
+                    <i class="material-icons right">audiotrack</i>Messanger
 
-    <footer id="share-buttons">
+                </a>
+            </div>
+        <!-- </div>
+    </div>  -->
+        <!--<h5 style="color:black"> Your Location Song </h5>
+            <div class="button center-align">
+                <button class="btn waves-effect waves-light" id="loveit" type="button" name="action"><i class="material-icons right">audiotrack</i>I
+                    Love It
+                </button>
 
-        <!-- Buffer -->
-        <a href="https://bufferapp.com/add?url=https://mylocationsong.com/&amp;text=Simple Share Buttons" target="_blank">
-            <img src="https://simplesharebuttons.com/images/somacro/buffer.png" alt="Buffer" />
-        </a>
+                <button class="btn waves-effect waves-light" id="hateit" type="button" name="action"><i class="material-icons right">audiotrack</i>I
+                    Change it
+                </button>
 
-        <!-- Digg -->
-        <a href="https://www.digg.com/submit?url=https://mylocationson.com/" target="_blank">
-            <img src="https://simplesharebuttons.com/images/somacro/diggit.png" alt="Digg" />
-        </a>
+            </div>
 
-        <!-- Email -->
-        <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://mylocationsong.com/">
-            <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
-        </a>
+            <div class="row info valign-wrapper">
 
-        <!-- Facebook -->
-        <a href="https://www.facebook.com/sharer.php?u=https://mylocationsong.com/" target="_blank">
-            <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
-        </a>
+                <div class="col s6  image" id="linkhere">
+    <img src ="./Assets/Images/jakes.jpg">
+                </div>
 
-        <!-- Google+ -->
-        <a href="https://plus.google.com/share?url=https://mylocationsong.com/" target="_blank">
-            <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
-        </a>
-
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://mylocationsong.com/" target="_blank">
-            <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
-        </a>
+                <div class="col s6">
+                    <h5 class="song-info">Title: <span id="title">Kill The Lights</span></h5>
+                    <h5>Artist: <span id="artist">The Jakes</span></h5>-->
+        <!-- <a href="mylocationsong.com?at=1000lc66" target="_blank"><img src="http://www.niftybuttons.com/itunes/itunesbutton1.png" alt="iTunes Button (via NiftyButtons.com)"></a> -->
+        <!--<a id="buylink" style="display:inline-block;overflow:hidden;background:url(https://tools.applemusic.com/en-us/badge-lrg.svg?releaseDate=2001-04-02&kind=song&bubble=itunes) no-repeat;width:153px;height:40px;"></a>
+            <a id="amazonlink"><img src="./Assets/Images/amazon.png" alt="Amazon Button"
+                    style=" width:153px;height:40px;"></a>
 
 
+        </div>
+    </div>-->
+        <!-- Youtube  -->
+        <!--<div class="row">
+
+        <div class="col s12">
+            <div class="youtube iframe-container">
+                <iframe id="vid" width="550" height="315" src="https://www.youtube.com/embed/Mj4JwAFGQq4 "
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+
+    </div>-->
 
 
-        <!-- Print -->
-        <a href="javascript:;" onclick="window.print()">
-            <img src="https://simplesharebuttons.com/images/somacro/print.png" alt="Print" />
-        </a>
 
-        <!-- Reddit -->
-        <a href="https://reddit.com/submit?url=https://mylocationsong.com/&amp;title=Simple Share Buttons" target="_blank">
-            <img src="https://simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" />
-        </a>
 
-        <!-- StumbleUpon-->
-        <a href="https://www.stumbleupon.com/submit?url=https://mylocationsong.com/&amp;title=Simple Share Buttons"
-            target="_blank">
-            <img src="https://simplesharebuttons.com/images/somacro/stumbleupon.png" alt="StumbleUpon" />
-        </a>
+        <footer id="share-buttons">
 
-        <!-- Tumblr-->
-        <a href="https://www.tumblr.com/share/link?url=https://mylocationsong.com/&amp;title=Simple Share Buttons"
-            target="_blank">
-            <img src="https://simplesharebuttons.com/images/somacro/tumblr.png" alt="Tumblr" />
-        </a>
+            <!-- Buffer -->
+            <a href="https://bufferapp.com/add?url=https://mylocationsong.com/&amp;text=Simple Share Buttons" target="_blank">
+                <img src="https://simplesharebuttons.com/images/somacro/buffer.png" alt="Buffer" />
+            </a>
 
-        <!-- Twitter -->
-        <a href="https://twitter.com/share?url=https://mylocationsong.com/&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons"
-            target="_blank">
-            <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
-        </a>
+            <!-- Digg -->
+            <a href="https://www.digg.com/submit?url=https://mylocationson.com/" target="_blank">
+                <img src="https://simplesharebuttons.com/images/somacro/diggit.png" alt="Digg" />
+            </a>
 
-        <!-- VK -->
-        <a href="https://vkontakte.ru/share.php?url=https://mylocationsong.com/" target="_blank">
-            <img src="https://simplesharebuttons.com/images/somacro/vk.png" alt="VK" />
-        </a>
+            <!-- Email -->
+            <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://mylocationsong.com/">
+                <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+            </a>
 
-        <!-- Yummly -->
-        <a href="https://www.yummly.com/urb/verify?url=https://mylocationsong.com/&amp;title=Simple Share Buttons"
-            target="_blank">
-            <img src="https://simplesharebuttons.com/images/somacro/yummly.png" alt="Yummly" />
-        </a>
-   <p> &copy; Yusuf Serunjogi 2018 </p>
-   <script type='text/javascript'>var _merchantSettings=_merchantSettings || [];(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src= ('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();</script>
-       <div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>  
-</footer>
-</div> <!-- container div-->
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/sharer.php?u=https://mylocationsong.com/" target="_blank">
+                <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+            </a>
+
+            <!-- Google+ -->
+            <a href="https://plus.google.com/share?url=https://mylocationsong.com/" target="_blank">
+                <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://mylocationsong.com/" target="_blank">
+                <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+            </a>
+
+
+
+
+            <!-- Print -->
+            <a href="javascript:;" onclick="window.print()">
+                <img src="https://simplesharebuttons.com/images/somacro/print.png" alt="Print" />
+            </a>
+
+            <!-- Reddit -->
+            <a href="https://reddit.com/submit?url=https://mylocationsong.com/&amp;title=Simple Share Buttons" target="_blank">
+                <img src="https://simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" />
+            </a>
+
+            <!-- StumbleUpon-->
+            <a href="https://www.stumbleupon.com/submit?url=https://mylocationsong.com/&amp;title=Simple Share Buttons"
+               target="_blank">
+                <img src="https://simplesharebuttons.com/images/somacro/stumbleupon.png" alt="StumbleUpon" />
+            </a>
+
+            <!-- Tumblr-->
+            <a href="https://www.tumblr.com/share/link?url=https://mylocationsong.com/&amp;title=Simple Share Buttons"
+               target="_blank">
+                <img src="https://simplesharebuttons.com/images/somacro/tumblr.png" alt="Tumblr" />
+            </a>
+
+            <!-- Twitter -->
+            <a href="https://twitter.com/share?url=https://mylocationsong.com/&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons"
+               target="_blank">
+                <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+            </a>
+
+            <!-- VK -->
+            <a href="https://vkontakte.ru/share.php?url=https://mylocationsong.com/" target="_blank">
+                <img src="https://simplesharebuttons.com/images/somacro/vk.png" alt="VK" />
+            </a>
+
+            <!-- Yummly -->
+            <a href="https://www.yummly.com/urb/verify?url=https://mylocationsong.com/&amp;title=Simple Share Buttons"
+               target="_blank">
+                <img src="https://simplesharebuttons.com/images/somacro/yummly.png" alt="Yummly" />
+            </a>
+            <p> &copy; Yusuf Serunjogi 2018 </p>
+            <script type='text/javascript'>var _merchantSettings = _merchantSettings || []; (function () { var autolink = document.createElement('script'); autolink.type = 'text/javascript'; autolink.async = true; autolink.src = ('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(autolink, s); })();</script>
+            <div class="fb-like"
+                 data-share="true"
+                 data-width="450"
+                 data-show-faces="true">
+            </div>
+        </footer>
+    </div> <!-- container div-->
 
 
 

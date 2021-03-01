@@ -1,4 +1,5 @@
 
+
 /* Header Styles, this includes up until the buttons */
 
 * {
@@ -8,9 +9,13 @@
  body {
      /* background-image: url("../Images/concrete-texture.png"); */
      background-image: url("../Images/road.jpeg");
+     backface-visibility: 50%;
      background-size: cover;
      background-position: center;
-     max-width: 100%;
+     max-width: 100;
+
+
+
 }
 
 .responsive-img {
