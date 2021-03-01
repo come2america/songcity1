@@ -20,7 +20,7 @@ const messagesRef = firebase.firestore().collection("messages");
 /* Define DOM elements */
 const messageInputDOM = document.getElementById("messageInput");
 const soundInputDOM = document.getElementById("soundInput");
-const soundPickerDOM = document.getElementById("submitbtn");
+const soundPickerDOM = document.getElementById("submit");
 const namePickerDOM= document.getElementById("namePicker");
 const messagesDOM = document.getElementById("messages");
 
@@ -111,13 +111,13 @@ namePickerDOM.addEventListener("click", () => {
 });
 
 
-soundPickerDOM.addEventListener("click", () => {
-/*  if (event.which === 13 || event.keyCode === 13) {*/
+messageInputDOM.addEventListener("keydown", (event) => {
+  if (event.which === 13 || event.keyCode === 13) {
     sendMessage(messageInputDOM.value);
       messageInputDOM.value = "";
       sendMessage(soundInputDOM.value);
       soundInputDOM.value = "";
-/*  }*/
+  }
 });
 
 
