@@ -120,14 +120,13 @@ messageInputDOM.addEventListener("keydown", (event) => {
   }
 });
 
-soundpickerDOM.addEventListener("click", () => {
-    
+soundpickerDOM.onclick = function () {
         sendMessage(messageInputDOM.value);
         messageInputDOM.value = "";
         sendMessage(soundInputDOM.value);
         soundInputDOM.value = "";
     
-});
+};
 
 
 
