@@ -11,11 +11,33 @@
     <link href="./Assets/CSS/styles.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <script src="https://api.mqcdn.com/sdk/mapquest-gl-js/v0.4.0/mapquest-gl.js"></script>
-<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-gl-js/v0.4.0/mapquest-gl.css"/>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-gl-js/v0.4.0/mapquest-gl.css" />
 
 
     <title>Location Song</title>
 
+    <!-- Global site tag (gtag.js) - Google Ads: 933557001 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-933557001"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-933557001');
+    </script>
+
+
+
+    <script>
+        window.addEventListener('load', function () {
+            jQuery('.btn.waves-effect').click(function () {
+
+                gtag('event', 'conversion', { 'send_to': 'AW-933557001/usjwCKzjtu0BEInmk70D' });
+            })
+
+        })
+
+    </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131395094-2"></script>
     <script>
@@ -25,15 +47,14 @@
 
         gtag('config', 'UA-131395094-2');
     </script>
+    <meta name="google-site-verification" content="vUMw67Ia8PtFKUdPaLLG95MtqHeW0oV6QzRDJgcGyLw" />
 
-<meta name="google-site-verification" content="vUMw67Ia8PtFKUdPaLLG95MtqHeW0oV6QzRDJgcGyLw" />
-<meta name="Give Your Address A Unique Song ” content="Give The Place You Spend The Most Time, A Memorable Song. Listen to it on Apple Music or Youtube”>
 
 </head>
 
 <body>
 
-    <h1 class="main">Location Song</h1>
+    <h1 class="main">Location Entertainment</h1>
     
 
     <div class="container">
@@ -41,7 +62,7 @@
 
         <!-- Address inputs and button -->
         <div id="addressform" class="row">
-            <h5 style="color:white">Enter Your Address And Check Out Its Song</h5>
+            <h5 style="color:white">Enter Your Address To Start</h5>
             <div class="input-field col s3">
                 <input placeholder="123 Main Street" id="street" type="text" class="validate">
                 <label class="active" for="street">Address</label>
