@@ -3,6 +3,7 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+  
 }
 
 .app {
@@ -30,6 +31,7 @@ body {
   align-items: flex-start;
   width: 100%;
   flex: 1;
+  border:5px solid blue;
 }
 
 .name {
