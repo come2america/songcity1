@@ -126,7 +126,7 @@ submitDOM.addEventListener("click", (event) => {
         sendMessage(soundInputDOM.value);
         soundInputDOM.value = "";
     }
-};
+});
 
 
 
