@@ -111,7 +111,7 @@ namePickerDOM.addEventListener("click", () => {
 });
 
 
-messageInputDOM.addEventListener("keydown", (event) => {
+soundInputDOM.addEventListener("keydown", (event) => {
   if (event.which === 13 || event.keyCode === 13) {
     sendMessage(messageInputDOM.value);
       messageInputDOM.value = "";
