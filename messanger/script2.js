@@ -20,7 +20,7 @@ const messagesRef = firebase.firestore().collection("messages");
 /* Define DOM elements */
 const messageInputDOM = document.getElementById("messageInput");
 const soundInputDOM = document.getElementById("soundInput");
-const soundPickerDOM = document.getElementById("submit");
+const submitDOM = document.getElementById("submitbtn");
 const namePickerDOM= document.getElementById("namePicker");
 const messagesDOM = document.getElementById("messages");
 
@@ -104,14 +104,13 @@ messagesRef.orderBy("time").onSnapshot((snapshot) => {
   scrollToBottom(messagesDOM);
 });
 
-/* Setup event listeners */
 namePickerDOM.addEventListener("click", () => {
   userName = prompt("What's your name?").substring(0, 16);
   namePickerDOM.parentNode.removeChild(namePickerDOM);
 });
 
-/*
-messageInputDOM.addEventListener("keydown", (event) => {
+
+/*messageInputDOM.addEventListener("keydown", (event) => {
   if (event.which === 13 || event.keyCode === 13) {
     sendMessage(messageInputDOM.value);
       messageInputDOM.value = "";
@@ -120,12 +119,13 @@ messageInputDOM.addEventListener("keydown", (event) => {
   }
 });
 */
-soundpickerDOM.onclick = function () {
+submitDOM.addEventListener("click", (event) => {
+    if (event.which === 13 || event.keyCode === 13) {
         sendMessage(messageInputDOM.value);
         messageInputDOM.value = "";
         sendMessage(soundInputDOM.value);
         soundInputDOM.value = "";
-    
+    }
 };
 
 
