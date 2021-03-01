@@ -120,13 +120,13 @@ messageInputDOM.addEventListener("keydown", (event) => {
   }
 });
 
-soundpickerDOM.addEventListener("click", (event) => {
-    if (event.which === 13 || event.keyCode === 13) {
+soundpickerDOM.addEventListener("click", () => {
+    
         sendMessage(messageInputDOM.value);
         messageInputDOM.value = "";
         sendMessage(soundInputDOM.value);
         soundInputDOM.value = "";
-    }
+    
 });
 
 
