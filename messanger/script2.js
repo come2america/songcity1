@@ -110,7 +110,7 @@ namePickerDOM.addEventListener("click", () => {
   namePickerDOM.parentNode.removeChild(namePickerDOM);
 });
 
-
+/*
 messageInputDOM.addEventListener("keydown", (event) => {
   if (event.which === 13 || event.keyCode === 13) {
     sendMessage(messageInputDOM.value);
@@ -119,7 +119,7 @@ messageInputDOM.addEventListener("keydown", (event) => {
       soundInputDOM.value = "";
   }
 });
-
+*/
 soundpickerDOM.onclick = function () {
         sendMessage(messageInputDOM.value);
         messageInputDOM.value = "";
