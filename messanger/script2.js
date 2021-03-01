@@ -122,6 +122,6 @@ messageInputDOM.addEventListener("keydown", (event) => {
 
 
 
-});
+
 
 /* Setup Bitmoji Kit Web here */
