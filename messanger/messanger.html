@@ -11,17 +11,25 @@
   </head>
 
   <body>
-    <div class="app">
-      <div id="messages"></div>
-      <div class="controls">
-          <input id="messageInput" type="text" placeholder="Type a message..." />
-          <form action="http://" target=_blank method="post">
-             <input id="soundInput" type="url" placeholder="Copy Gingolow Song Url ..." />
-          </form>
-<!--<i id="submit" class="material-icons">done</i>-->
-          <i id="namePicker" class="material-icons">account_box</i>
+      <div class="app">
+          <div id="messages"></div>
+          <div class="controls">
+              <input id="messageInput" type="text" placeholder="Type a message..." />
+              <form action="http://" target=_blank method="post">
+                  <input id="soundInput" type="url" placeholder="Copy Gingolow Song Url ..." />
+              </form>
+              <!--<i id="submit" class="material-icons">done</i>-->
+              <i id="namePicker" class="material-icons">account_box</i>
+          </div>
+          <div class="button center-align">
+              <a href="https://gingolow.com/"
+                 class="btn waves-effect waves-light" id="music" type="button" name="action">
+                  <i class="material-icons right">audiotrack</i>Play With Sounds
+
+              </a>
+          </div>
+
       </div>
-    </div>
 
     <!-- JS -->
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
