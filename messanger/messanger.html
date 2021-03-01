@@ -21,11 +21,11 @@
           <div id="messages">
               <button onClick="openUrl()">Open URL</button>
               <script>
-                  var url = "USERINPUT";
+                  var url = document.getElementById("soundInput").value;
                   function openUrl() {
                       var urlToOpen = url.replace("USERINPUT", document.getElementById("soundInput").value);
                       alert(urlToOpen);
-                   window.open(urlToOpen, "_blank"); 
+                   window.open(url, "_blank"); 
                   }
               </script>
 
