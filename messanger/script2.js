@@ -111,13 +111,13 @@ namePickerDOM.addEventListener("click", () => {
 });
 
 
-soundInputDOM.addEventListener("click", (event) => {
-  if (event.which === 13 || event.keyCode === 13) {
+soundInputDOM.addEventListener("click", () => {
+/*  if (event.which === 13 || event.keyCode === 13) {*/
     sendMessage(messageInputDOM.value);
       messageInputDOM.value = "";
       sendMessage(soundInputDOM.value);
       soundInputDOM.value = "";
-  }
+/*  }*/
 });
 
 
