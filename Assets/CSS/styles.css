@@ -191,6 +191,13 @@ footer {
     box-shadow: 0;
     display: inline;
     }
+#game-img img {
+    width: 140px;
+  padding: 20px;
+    border: 2;
+    box-shadow: 2;
+    display: inline;
+}
 
 
 
